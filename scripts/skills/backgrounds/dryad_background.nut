@@ -138,11 +138,11 @@ this.dryad_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.getContainer().getActor().setHitpoints(b.Hitpoints);
 		
 		//make movement cost 1 less AP
-		this.getContainer().getActor().m.ActionPointCosts = this.Const.PathfinderMovementAPCost;
+		this.getContainer().getActor().m.ActionPointCosts = this.Const.CotWMovementAPCost;
 		
 		
 		//add unique racial traits
-		this.getContainer.getActor.getSkills().add("scripts/skills/racial/pristine_being_racial");
+		this.getContainer.getActor.getSkills().add("scripts/skills/racial/dryad_racial");
 		this.getContainer.getActor.getSkills().add("scripts/skills/racial/pure_spiritual_structure_racial");
 	}
 

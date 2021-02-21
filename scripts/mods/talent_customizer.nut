@@ -12,7 +12,7 @@ this.talent_customizer <- {
 
 		NumOfOther = [0,0]
 		OtherTalentChances = [60,30]
-	}
+	},
 
 	function fillTalents(possibleTalents, talentChances, numOfTalents, player) //For primary and secondary talents
 	{
