@@ -29,19 +29,19 @@
 			}
 			else if (this.getBackground() == "background.satyr") 
 			{
-			    local satyrTalents = this.new("scripts/mods/talent_customizer");
-			    satyrTalents.m.PrimaryTalents = [
-			    	this.Const.Attributes.MeleeSkill,
-			    	this.Const.Attributes.HP,
-			    	this.Const.Attributes.Bravery,
-			    	this.Const.Attributes.Fatigue
-			    ];
-			    satyrTalents.m.PrimaryTalentChances = [5,55];
-			    satyrTalents.m.NumOfPrimary = [4,4];
+				local satyrTalents = this.new("scripts/mods/talent_customizer");
+				satyrTalents.m.PrimaryTalents = [
+					this.Const.Attributes.MeleeSkill,
+					this.Const.Attributes.HP,
+					this.Const.Attributes.Bravery,
+					this.Const.Attributes.Fatigue
+				];
+				satyrTalents.m.PrimaryTalentChances = [5,55];
+				satyrTalents.m.NumOfPrimary = [4,4];
 
-			    satyrTalents.m.NumOfOther = [0,1];
-			    satyrTalents.m.OtherTalentChances = [65,35];
-			    satyrTalents.fillCustomTalentValues(this);
+				satyrTalents.m.NumOfOther = [0,1];
+				satyrTalents.m.OtherTalentChances = [65,35];
+				satyrTalents.fillCustomTalentValues(this);
 			}
 		}
 	}
