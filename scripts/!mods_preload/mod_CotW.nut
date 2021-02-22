@@ -30,6 +30,11 @@
 				satyrTalents.m.OtherTalentChances = [65,35];
 				satyrTalents.fillCustomTalentValues(this);
 			}
+			else if (this.getBackground() == "background.elf")
+			{
+				local elfTalents = this.new("scripts/mods/talent_customizer");
+				//set elf specific talents
+			}
 		}
 	}
 }

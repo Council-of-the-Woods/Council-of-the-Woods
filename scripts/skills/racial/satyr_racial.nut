@@ -25,14 +25,35 @@ this.satyr_racial <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
+		_properties.Initiative += getNumEnemies();
+	}
+
+	function getNumEnemies()
+	{
+		if (!("Entities" in this.Tactical))
+		{
+			return 0;
+		}
+
+		if (this.Tactical.Entities == null)
+		{
+			return 0;
+		}
+
+		if (!this.Tactical.isActive())
+		{
+			return 0;
+		}
+		
 		local enemies = this.Tactical.Entities.getInstancesOfFaction(!actor.getFaction());
 		local numEnemies = 0;
+
 		foreach(enemy in enemies)
 		{
 			numEnemies++;
 		}
-		_properties.Initiative += numEnemies;
+
+		return numEnemies;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )

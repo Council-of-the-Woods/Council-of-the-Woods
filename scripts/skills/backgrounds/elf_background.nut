@@ -51,7 +51,7 @@ this.elf_background <- this.inherit("scripts/skills/backgrounds/character_backgr
 
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
-			this.Const.Attributes.Fatigue
+			this.Const.Attributes.Stamina
 		];
 		
 		//the appearance is placeholder
@@ -87,6 +87,12 @@ this.elf_background <- this.inherit("scripts/skills/backgrounds/character_backgr
 	function onBuildDescription()
 	{
 		return "{WIP}";
+	}
+
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/racial/elf_racial"));
 	}
 
 });
