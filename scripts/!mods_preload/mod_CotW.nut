@@ -36,5 +36,15 @@
 				//set elf specific talents
 			}
 		}
+
+		local checkMorale = o.checkMorale;
+		o.checkMorale = function (_change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false)
+		{
+			if(change < 0 && this.m.Skills.hasSkill("racial.satyr") && (this.m.MoraleState == this.Const.MoraleState.Breaking || _type == this.Const.MoraleCheckType.Fatality));
+			{
+				return false;
+			}
+			return checkMorale(_change, _difficulty, _type,_showIconBeforeMoraleIcon,_noNewLine);
+		}
 	}
 }
