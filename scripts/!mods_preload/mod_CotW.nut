@@ -32,7 +32,7 @@
 				local satyrTalents = this.new("scripts/mods/talent_customizer");
 				satyrTalents.m.PrimaryTalents = [
 					this.Const.Attributes.MeleeSkill,
-					this.Const.Attributes.HP,
+					this.Const.Attributes.Hitpoints,
 					this.Const.Attributes.Bravery,
 					this.Const.Attributes.Fatigue
 				];

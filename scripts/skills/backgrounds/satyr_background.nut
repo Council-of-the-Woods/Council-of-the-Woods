@@ -88,5 +88,10 @@ this.satyr_background <- this.inherit("scripts/skills/backgrounds/character_back
 	{
 		return "{WIP}";
 	}
-	
+
+	function onAdded()
+	{
+		this.character_background.onAdded();
+		this.m.Container.add(this.new("scripts/skills/perks/perk_nine_lives"));
+	}
 });
