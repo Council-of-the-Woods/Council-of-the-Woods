@@ -1,19 +1,6 @@
 ::mods_registerMod("CotW", 0.1,"Council of the Woods");
 ::mods_queue(null, null, function()
 {
-	local gt = this.getroottable()
-	gt.Const.CotWMovementAPCost <- [
-		0,
-		1,
-		1,
-		2,
-		2,
-		3,
-		3,
-		1,
-		3
-	];
-
 	::mods_hookClass("entity/tactical/player", function (o)
 	{
 		while(!("fillTalentValues" in o)) o = o[o.SuperName];

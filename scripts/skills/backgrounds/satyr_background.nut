@@ -92,6 +92,9 @@ this.satyr_background <- this.inherit("scripts/skills/backgrounds/character_back
 	function onAdded()
 	{
 		this.character_background.onAdded();
+		this.m.Container.ActionPoints--;
+		this.m.Container.add(this.new("scripts/skills/racial/satyr_racial"));
 		this.m.Container.add(this.new("scripts/skills/perks/perk_nine_lives"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_pathfinder"));
 	}
 });
