@@ -70,6 +70,11 @@
 			local onAfterUpdate = o.onAfterUpdate;
 			o.onAfterUpdate = function( _properties )
 			{
+				if (this.m.ID == "actives.strike")
+				{
+					return;	
+				}
+				
 				onAfterUpdate(_properties);
 
 				if (this.m.Container.hasSkill("perk.satyer_mastery_axe"))
