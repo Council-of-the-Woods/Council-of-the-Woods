@@ -70,7 +70,7 @@
 			local onAfterUpdate = o.onAfterUpdate;
 			o.onAfterUpdate = function( _properties )
 			{
-				onAfterUpdate;
+				onAfterUpdate(_properties);
 
 				if (this.m.Container.hasSkill("perk.satyer_mastery_axe"))
 				{
