@@ -89,6 +89,45 @@ this.satyr_background <- this.inherit("scripts/skills/backgrounds/character_back
 		return "{WIP}";
 	}
 
+		function onChangeAttributes()
+	{
+		local c = {
+			Hitpoints = [
+				10,
+				15
+			],
+			Bravery = [
+				10,
+				15
+			],
+			Stamina = [
+				0,
+				0
+			],
+			MeleeSkill = [
+				3,
+				3
+			],
+			RangedSkill = [
+				-7,
+				-7
+			],
+			MeleeDefense = [
+				5,
+				10
+			],
+			RangedDefense = [
+				0,
+				5
+			],
+			Initiative = [
+				0,
+				0
+			]
+		};
+		return c;
+	}
+
 	function onAdded()
 	{
 		this.character_background.onAdded();

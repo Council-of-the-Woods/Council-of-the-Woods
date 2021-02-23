@@ -46,5 +46,20 @@
 			}
 			return checkMorale(_change, _difficulty, _type,_showIconBeforeMoraleIcon,_noNewLine);
 		}
-	}
+	});
+
+	::mods_hookClass("items/misc/potion_of_oblivion_item", function(o)
+	{
+		local onUse = o.onUse;
+		o.onUse = function(_actor, _item = null)
+		{
+			local result = onUse(_actor, _item);
+			if(_actor.hasSkill("racial.satyr"))
+			{
+				_actor.getSkills().add(this.new("scripts/skills/perks/perk_nine_lives"));
+				_actor.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+			}
+			return result;
+		}
+	});
 }
