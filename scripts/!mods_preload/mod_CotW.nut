@@ -62,4 +62,42 @@
 			return result;
 		}
 	});
-}
+	
+	local AxeSkills = [
+		"chop",
+		"round_swing",
+		"split_axe",
+		"split_man",
+		"strike_skill"
+	];
+	
+	foreach (skill in AxeSkills)
+	{
+		::mods_hookClass("skills/actives/" + skill, function (o)
+		{
+			local isOneHandAxe = function()
+			{
+				local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+				local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+				return main != null && off == null;
+			};
+			
+			local onAfterUpdate = o.onAfterUpdate;
+			o.onAfterUpdate = function( _properties )
+			{
+				if (this.m.ID == "actives.strike")
+				{
+					return;	
+				}
+				
+				onAfterUpdate(_properties);
+
+				if (this.m.Container.hasSkill("perk.satyer_mastery_axe"))
+				{
+					this.m.FatigueCostMult = 0.5;
+					_properties.MeleeSkill += isOneHandAxe() ? 10 : 5;
+				}
+			}
+		});
+	}
+});
