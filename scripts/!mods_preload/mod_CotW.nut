@@ -12,7 +12,21 @@
 			if(this.getBackground() == "background.dryad")
 			{
 				local dryadTalents = this.new("scripts/mods/talent_customizer");
-				//set dryad specific talents
+				
+				dryadTalents.m.PrimaryTalents = [
+				this.Const.Attributes.Bravery,
+				this.Const.Attributes.RangedSkill
+				];
+
+				dryadTalents.m.ExcludedTalents = [
+				this.Const.Attributes.MeleeSkill,
+				this.Const.Attributes.MeleeDefense,
+				this.Const.Attributes.Hitpoints
+				];
+				dryadTalents.m.NumOfPrimary = [2,2];
+				dryadTalents.m.NumOfOther = [1,1];
+				dryadTalents.fillCustomTalentValues(this);
+
 			}
 			else if (this.getBackground() == "background.satyr") 
 			{
@@ -92,7 +106,7 @@
 				
 				onAfterUpdate(_properties);
 
-				if (this.m.Container.hasSkill("perk.satyer_mastery_axe"))
+				if (this.m.Container.hasSkill("perk.satyr_mastery_axe"))
 				{
 					this.m.FatigueCostMult = 0.5;
 					_properties.MeleeSkill += isOneHandAxe() ? 10 : 5;

@@ -89,7 +89,7 @@ this.satyr_background <- this.inherit("scripts/skills/backgrounds/character_back
 		return "{WIP}";
 	}
 
-		function onChangeAttributes()
+	function onChangeAttributes()
 	{
 		local c = {
 			Hitpoints = [
