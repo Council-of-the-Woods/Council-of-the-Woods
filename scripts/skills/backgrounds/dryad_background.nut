@@ -122,25 +122,47 @@ this.dryad_background <- this.inherit("scripts/skills/backgrounds/character_back
 		return "{WIP}";
 	}
 
+	function onChangeAttributes()
+	{
+		local c = {
+			Hitpoints = [
+				10,
+				10
+			],
+			Bravery = [
+				10,
+				5
+			],
+			Stamina = [
+				0,
+				0
+			],
+			MeleeSkill = [
+				0,
+				0
+			],
+			RangedSkill = [
+				8,
+				8
+			],
+			MeleeDefense = [
+				0,
+				5
+			],
+			RangedDefense = [
+				15,
+				15
+			],
+			Initiative = [
+				10,
+				10
+			]
+		};
+		return c;
+	}
+
 	function buildAttributes()
 	{
-		this.character_background.buildAttributes();
-		local b = this.getContainer().getActor().getBaseProperties();
-		
-		//set starting base health to 80
-		b.Hitpoints = 80; 
-		
-		//add additional ranged skill, defense to base stat
-		b.RangedSkill += 5;
-		b.RangedDefense += 10;
-		
-		this.getContainer().getActor().m.CurrentProperties = clone b;
-		this.getContainer().getActor().setHitpoints(b.Hitpoints);
-		
-		//make movement cost 1 less AP
-		this.getContainer().getActor().m.ActionPointCosts = this.Const.CotWMovementAPCost;
-		
-		
 		//add unique racial traits
 		this.getContainer.getActor.getSkills().add("scripts/skills/racial/dryad_racial");
 		this.getContainer.getActor.getSkills().add("scripts/skills/racial/pure_spiritual_structure_racial");
